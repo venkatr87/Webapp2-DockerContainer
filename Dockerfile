@@ -1,2 +1,3 @@
 FROM openjdk:12-alpine
-COPY target/*.war *.war
+
+COPY target/*.war /opt//*.war
