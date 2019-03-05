@@ -1,16 +1,16 @@
 apiVersion: apps/v1beta1
 kind: Deployment
 metadata:
-  name: hello-world
+  name: webapp2
 spec:
-  replicas: 1
+  replicas: 2
   template:
     metadata:
       labels:
-        app: hello
+        app: webapp2
     spec:
       containers:
-      - name: hello
+      - name: webapp2
         image: venkatr87/webapp2:IMAGE_TAG
         ports:
         - containerPort: 8080
