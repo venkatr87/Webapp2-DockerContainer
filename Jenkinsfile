@@ -7,7 +7,7 @@ pipeline{
 stages{
    stage("maven build and deploy"){
       steps{
-       sh(script:'mvn install -f trucks/pom.xml') 
+       sh(script:'mvn install -f pom.xml') 
       }
     }
       
