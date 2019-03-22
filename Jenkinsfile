@@ -12,11 +12,11 @@ stages{
     }
       
    stage("Build docker image tag and push"){
-    steps{
-    sh "docker build --tag webapp ~/AbcabWebApplication"
-    sh "docker tag webapp venkatr87/webapp2:${BUILD_NUMBER}"
-    sh "docker login -u venkatr87 --password-stdin Rhidhev1418"
-    sh "docker push venkatr87/webapp2:${BUILD_NUMBER}"
+     steps{
+       sh "docker login -u venkatr87 --password-stdin Rhidhev1418"
+       sh "docker build --tag webapp ~/AbcabWebApplication"
+       sh "docker tag webapp venkatr87/webapp2:${BUILD_NUMBER}"
+       sh "docker push venkatr87/webapp2:${BUILD_NUMBER}"
     }
     }
  }
