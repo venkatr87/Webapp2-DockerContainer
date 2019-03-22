@@ -19,8 +19,5 @@ stages{
        sh "docker push venkatr87/webapp2:${BUILD_NUMBER}"
     }
     }
-  agent {
-    docker { image 'venkatr87/webapp2:${BUILD_NUMBER}' }
-    }
   }   
 }
