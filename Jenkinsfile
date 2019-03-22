@@ -19,15 +19,5 @@ stages{
     sh "docker push venkatr87/webapp2:${BUILD_NUMBER}"
     }
     }
-   stage('kubernetes start deployment'){
-    steps{
-    sh (script: 'sed -i.bkp "s/IMAGE_TAG/${BUILD_NUMBER}/g" kubernetes/deployment.yaml')
-    sh "kubectl apply -f kubernetes/deployment.yaml   
-    }
-    }
-   stage('kubernetes deploy service'){
-    steps{
-    sh "kubectl apply -f kubernetes/service.yaml"    
-    }
-}
+ }
     
