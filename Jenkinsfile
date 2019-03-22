@@ -19,13 +19,8 @@ stages{
        sh "docker push venkatr87/webapp2:${BUILD_NUMBER}"
     }
     }
-  stage ("Run docker Image") {
-    steps {
-      sh "docker run -it --name webapp2 -p 8090:8080 venkatr87/webapp2:${BUILD_NUMBER}"
+  agent {
+    docker { image 'venkatr87/webapp2:${BUILD_NUMBER}' }
     }
-  }
- }
-  
-
-    
+  }   
 }
