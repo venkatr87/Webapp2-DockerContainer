@@ -19,11 +19,11 @@ stages{
        sh "docker push venkatr87/webapp2:${BUILD_NUMBER}"
     }
    }
-   stage("Deploy")
+  /* stage("Deploy")
      {
      steps{
        sh "ssh -tt -v -o StrictHostKeyChecking=no root@{params.Environment IP} 'docker run -it -d --name webapp2 -p 8888:8888 venkatr87/webapp2:${BUILD_NUMBER}'"
         }
-   }
+   } */
   }   
 }
